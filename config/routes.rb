@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'home/index'
+
+  get 'home/edit'
+
+  get 'home/update'
+
   devise_for :users
   get 'static/index' => 'static#index', as: :static_index
 
