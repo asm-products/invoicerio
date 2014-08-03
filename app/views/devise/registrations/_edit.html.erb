@@ -1,0 +1,46 @@
+<div class="panel">
+  <%= form_for(resource, :html => {:class => 'form-horizontal', :method => :put}, :url => registration_path(resource_name), :remote => true) do |f| %>
+    <%= devise_error_messages! %>
+    <legend>Information about your account</legend>
+    <div class="form-group">
+      <%= f.label :email, :class => 'col-md-3 control-label' %>
+      <div class="col-md-9">
+        <%= f.email_field :email, :autofocus => true, :class => 'form-control' %>
+      </div>
+    </div>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
+    <div class="form-group">
+      <%= f.label :password, :class => 'col-md-3 control-label' %>
+      <div class="col-md-9">
+        <%= f.password_field :password, :autocomplete => "off", :class => 'form-control' %>
+        <span class="help-block">leave blank if you don't want to change it</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :password_confirmation, :class => 'col-md-3 control-label' %>
+      <div class="col-md-9">
+        <%= f.password_field :password_confirmation, :class => 'form-control' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :current_password, :class => 'col-md-3 control-label' %> 
+      <div class="col-md-9">
+        <%= f.password_field :current_password, :class => 'form-control' %>
+        <span class="help-block">we need your current password to confirm your changes</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-md-offset-3 col-md-9">
+        <%= f.submit "Update", :class => 'btn btn-success' %>
+        <%= f.button "Cancel", :id => 'account-settings-cancel', :class => 'btn btn-primary' %>
+      </div>
+    </div>
+  <% end %>
+  <div class="row">
+    <div class="col-md-12 right-aligned">
+      <%= button_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :class => 'btn btn-danger', :method => :delete %>
+    </div>
+  </div>
+</div>
