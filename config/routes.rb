@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'home/index'
+  resources :companies
 
   get 'home/edit'
 
