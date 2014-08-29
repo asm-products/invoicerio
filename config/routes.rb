@@ -1,15 +1,18 @@
 Rails.application.routes.draw do
-  get 'home/index'
   resources :companies
 
-  get 'home/edit'
+  devise_for :users, :controllers => {
+    :registrations => 'registrations'
+  }
 
-  get 'home/update'
 
-  devise_for :users
+  root 'home#index'
+
+  get 'home/index'  => 'home#index',  as: :home_index
+  get 'home/edit'   => 'home#edit',   as: :home_edit
+  get 'home/update' => 'home#update', as: :home_update
+
   get 'static/index' => 'static#index', as: :static_index
-
-  root 'static#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
