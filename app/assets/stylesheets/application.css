@@ -14,4 +14,9 @@
  *= require_tree .
  */
 
- body { background-color:#ecf0f1; }
+html { height: 100%; }
+
+body {
+  background-color:#ecf0f1;
+  height: 100%;
+}

@@ -1,2 +1,40 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="row logo-row">
+  <div class="col-md-2">
+    <a class="logo">invoicerio</a>
+  </div>
+  <div class="col-md-8" id="alert">
+  </div>
+  <div class="col-md-2 right-aligned">
+    <div class="btn-group">
+      <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"><%= current_user.company.name %> <b class="caret"></b></button>
+      <ul class="dropdown-menu pull-right">
+        <li>
+          <%= link_to 'Account settings', edit_user_registration_path, :remote => true %>
+        </li>
+        <li>
+          <%= link_to 'Sign out', destroy_user_session_path, :method => 'delete' %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-2 left-panel">
+    <h3>
+      <ul class="nav-menu-ul">
+        <li class="active">
+          <a href="#invoices" id="invoices-li" data-toggle="tab">Invoices</a>
+        </li>
+        <li>
+          <a href="#clients" id="clients-li" data-toggle="tab">Clients</a>
+        </li>
+      </ul>
+    </h3>
+  </div>
+  <div class="col-md-10 tab-content right-panel">
+    <div id="invoices" class="tab-pane fade active in">
+    </div>
+    <div id="clients" class="tab-pane fade">
+    </div>
+  </div>
+</div>
