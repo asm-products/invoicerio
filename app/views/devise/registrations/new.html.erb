@@ -21,38 +21,6 @@
         <%= f.password_field :password_confirmation, :class => 'form-control' %>
       </div>
     </div>
-    <%= f.fields_for :company do |c| %>
-      <div class="form-group">
-        <%= c.label :name, :class => 'col-md-3 control-label' %>
-        <div class="col-md-9">
-          <%= c.text_field :name, :class => 'form-control' %>
-        </div>
-      </div>
-      <div class="form-group">
-        <%= c.label :address, :class => 'col-md-3 control-label' %>
-        <div class="col-md-9">
-          <%= c.text_field :address, :class => 'form-control' %>
-        </div>
-      </div>
-      <div class="form-group">
-        <%= c.label :city, :class => 'col-md-3 control-label' %>
-        <div class="col-md-9">
-          <%= c.text_field :city, :class => 'form-control' %>
-        </div>
-      </div>
-      <div class="form-group">
-        <%= c.label :country, :class => 'col-md-3 control-label' %>
-        <div class="col-md-9">
-          <%= c.text_field :country, :class => 'form-control' %>
-        </div>
-      </div>
-      <div class="form-group">
-        <%= c.label :phone, :class => 'col-md-3 control-label' %>
-        <div class="col-md-9">
-          <%= c.text_field :phone, :class => 'form-control' %>
-        </div>
-      </div>
-    <% end %>
     <div class="form-group">
       <div class="col-sm-offset-3 col-sm-9">
         <%= f.submit "Sign up", :class => 'btn btn-default' %>

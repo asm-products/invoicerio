@@ -1,16 +1,17 @@
 Rails.application.routes.draw do
-  resources :companies
-
   devise_for :users, :controllers => {
     :registrations => 'registrations'
   }
 
+  resources :companies
 
   root 'home#index'
 
-  get 'home/index'  => 'home#index',  as: :home_index
-  get 'home/edit'   => 'home#edit',   as: :home_edit
-  get 'home/update' => 'home#update', as: :home_update
+  get  'home/index'    => 'home#index',              as: :home_index
+  get  'user/company'  => 'home#new_user_company',   as: :new_user_company
+  post 'user/company'  => 'home#create_user_company',as: :create_user_company
+  get  'home/edit'     => 'home#edit',               as: :home_edit
+  get  'home/update'   => 'home#update',             as: :home_update
 
   get 'static/index' => 'static#index', as: :static_index
 
