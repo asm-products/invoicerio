@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   }
 
   resources :companies
+  resources :invoices
 
   root 'home#index'
 

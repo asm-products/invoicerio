@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140829210601) do
+ActiveRecord::Schema.define(version: 20140831210742) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,21 @@ ActiveRecord::Schema.define(version: 20140829210601) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "invoices", force: true do |t|
+    t.string   "number"
+    t.integer  "issued_by_company_id"
+    t.integer  "issued_to_company_id"
+    t.date     "date_of_issue"
+    t.string   "currency"
+    t.boolean  "draft"
+    t.date     "expiration_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "invoices", ["issued_by_company_id"], name: "index_invoices_on_issued_by_company_id", using: :btree
+  add_index "invoices", ["issued_to_company_id"], name: "index_invoices_on_issued_to_company_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

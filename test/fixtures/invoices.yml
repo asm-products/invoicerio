@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  number: MyString
+  issued_by_company_id: 
+  issued_to_company_id: 
+  date_of_issue: 2014-09-01
+  currency: MyString
+  draft: false
+  expiration_date: 2014-09-01
+
+two:
+  number: MyString
+  issued_by_company_id: 
+  issued_to_company_id: 
+  date_of_issue: 2014-09-01
+  currency: MyString
+  draft: false
+  expiration_date: 2014-09-01
