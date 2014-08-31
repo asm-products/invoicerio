@@ -34,3 +34,17 @@ a:hover { text-decoration: none; }
   a:hover { color: #000000; }
   li.active a { color: #18bc9c; }
 }
+
+.right-panel {
+  .panel {
+    min-height: 490px;
+    padding: 10px; }
+  .row a { color: #2c3e50; }
+}
+
+div.pagination-centered {
+  text-align: center;
+  ul > li {
+    float: none;
+    display: inline-block; }
+}

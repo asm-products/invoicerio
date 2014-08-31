@@ -4,7 +4,7 @@
   </div>
   <div class="col-md-8" id="alert">
   </div>
-  <div class="col-md-2 right-aligned">
+  <div class="col-md-2 text-right">
     <div class="btn-group">
       <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"><%= current_user.company.name %> <b class="caret"></b></button>
       <ul class="dropdown-menu pull-right">
@@ -33,6 +33,7 @@
   </div>
   <div class="col-md-10 tab-content right-panel">
     <div id="invoices" class="tab-pane fade active in">
+      <%= render 'invoices/index' %>
     </div>
     <div id="clients" class="tab-pane fade">
     </div>
