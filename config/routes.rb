@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   root 'home#index'
 
   get  'home/index'    => 'home#index',              as: :home_index
-  get  'user/company'  => 'home#new_user_company',   as: :new_user_company
-  post 'user/company'  => 'home#create_user_company',as: :create_user_company
+  get  'user/company'  => 'home#new_company',        as: :new_user_company
+  post 'user/company'  => 'home#create_company',     as: :create_user_company
   get  'home/edit'     => 'home#edit',               as: :home_edit
   get  'home/update'   => 'home#update',             as: :home_update
 

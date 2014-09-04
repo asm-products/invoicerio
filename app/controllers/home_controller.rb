@@ -30,4 +30,9 @@ class HomeController < ApplicationController
 
   def update
   end
+
+  private
+  def company_params
+    params.require(:company).permit(:name, :address, :city, :country, :phone)
+  end
 end
