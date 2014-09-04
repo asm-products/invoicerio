@@ -1,0 +1,23 @@
+<div class="panel">
+  <%= link_to 'Add new client', new_company_path, :class => 'btn btn-success', :remote => true %>
+  </br>
+  <table id="clients-table" class="table table-hover client-table">
+    <thead>
+      <tr class="row">
+        <th class="col-md-4">Client</th>
+        <th class="col-md-4">Address</th>
+        <th class="col-md-4">City</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @clients.each do |p| %>
+      <tr class="row">
+        <td class="col-md-4"><%= link_to p.name, edit_company_path(p.id), remote: true %></td>
+        <td class="col-md-4 center-aligned"><%= p.address %></td>
+        <td class="col-md-4 center-aligned"><%= p.city %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<%= render 'companies/pagination', :current_page => 1 %>

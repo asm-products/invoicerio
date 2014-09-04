@@ -4,6 +4,7 @@ class HomeController < ApplicationController
       redirect_to new_user_company_path
     else
       @invoices = current_user.company.get_invoices_by_page(1)
+      @clients  = current_user.company.get_clients_by_page(1)
     end
   end
 
