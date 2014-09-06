@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @invoice.number %>
+</p>
+
+<p>
+  <strong>Issued by company:</strong>
+  <%= @invoice.issued_by_company %>
+</p>
+
+<p>
+  <strong>Issued to company:</strong>
+  <%= @invoice.issued_to_company %>
+</p>
+
+<p>
+  <strong>Date of issue:</strong>
+  <%= @invoice.date_of_issue %>
+</p>
+
+<p>
+  <strong>Currency:</strong>
+  <%= @invoice.currency %>
+</p>
+
+<p>
+  <strong>Draft:</strong>
+  <%= @invoice.draft %>
+</p>
+
+<p>
+  <strong>Expiration date:</strong>
+  <%= @invoice.expiration_date %>
+</p>
+
+<%= link_to 'Edit', edit_invoice_path(@invoice) %> |
+<%= link_to 'Back', invoices_path %>

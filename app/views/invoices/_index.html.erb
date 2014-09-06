@@ -1,0 +1,27 @@
+<div class="panel">
+  <%= link_to 'Add new invoice', new_invoice_path, :class => 'btn btn-success', :remote => true %>
+  </br>
+  <table id="invoices-table" class="table table-hover">
+    <thead>
+      <tr class="row">
+        <th class="col-md-1">Ref. No</th>
+        <th class="col-md-3">Issued to</th>
+        <th class="col-md-2">Date of issue</th>
+        <th class="col-md-1">Status</th>
+        <th class="col-md-3">Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @invoices.each do |invoice| %>
+      <tr class="row">
+        <td class="col-md-1 center-aligned"><%= link_to invoice.invoice_number, edit_invoice_path(invoice.id) %></td>
+        <td class="col-md-4 center-aligned"><%= invoice.issued_to_company.name %></td>
+        <td class="col-md-2 center-aligned"><%= invoice.date_of_issue %></td>
+        <td class="col-md-1 center-aligned"></td>
+        <td class="col-md-4 right-aligned"><%= invoice.sum %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<%= render 'invoices/pagination', :current_page => 1 %>

@@ -1,0 +1,21 @@
+<div id="invoices-pagination" class="pagination-centered">
+  <ul class="pagination">
+    <li>
+      <%= link_to '«', invoices_path(current_page-1), remote: true %>
+    </li>
+    <% (1..current_user.company.get_number_of_invoice_pages).each do |i| %>
+      <% if current_page == i %>
+      <li class="active">
+        <%= link_to i, invoices_path(i), remote: true %>
+      </li>
+      <% else %>
+      <li>
+        <%= link_to i, invoices_path(i), remote: true %>
+      </li>
+      <% end %>
+    <% end %>
+    <li>
+      <%= link_to '»', invoices_path(current_page+1), remote: true %>
+    </li>
+  </ul>
+</div>

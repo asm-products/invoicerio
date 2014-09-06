@@ -1,0 +1,50 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+a:hover { text-decoration: none; }
+
+.logo-row {
+  margin:0.7em 0 0.7em 0;
+  .logo {
+    font-family: 'Pacifico', cursive;
+    font-size:3em; }
+  .btn-group {
+    margin-top: 10px;
+    margin-bottom: 10px; }
+  .alert {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-top: 12px;
+    padding-bottom: 12px; }
+}
+
+.nav-menu-ul {
+  list-style-type: none;
+  padding-left: 15px;
+  li {
+    margin-bottom: 7px;
+    a { font-weight: bold; }
+  }
+}
+
+.left-panel {
+  a { color: #808a8f; }
+  a:visited { color: #808a8f; }
+  a:hover { color: #000000; }
+  li.active a { color: #18bc9c; }
+}
+
+.right-panel {
+  .panel {
+    min-height: 490px;
+    padding: 10px; }
+  .row a { color: #2c3e50; }
+}
+
+div.pagination-centered {
+  text-align: center;
+  ul > li {
+    float: none;
+    display: inline-block; }
+}

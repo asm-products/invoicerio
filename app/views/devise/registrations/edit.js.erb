@@ -1,0 +1,6 @@
+$('#account-settings div').replaceWith('<%=j render 'devise/registrations/edit' %>');
+$('#account-settings-li').tab('show');
+$("#account-settings-cancel").click( function(event) {
+  event.preventDefault();
+  $('#invoices-li').tab('show');
+});
