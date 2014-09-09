@@ -1,0 +1,3 @@
+$('#clients-table').replaceWith('<%=j render 'companies/table', :clients => @clients %>');
+$('#clients-pagination').replaceWith('<%=j render 'companies/pagination', :current_page => 1 %>');
+$('#clients-li').tab('show');
