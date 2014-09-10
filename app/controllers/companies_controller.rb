@@ -26,14 +26,11 @@ class CompaniesController < ApplicationController
   def create
     @company = Company.new(company_params)
 
-    respond_to do |format|
-      if @company.save
-        format.html { redirect_to @company, notice: 'Company was successfully created.' }
-        format.json { render :show, status: :created, location: @company }
-      else
-        format.html { render :new }
-        format.json { render json: @company.errors, status: :unprocessable_entity }
-      end
+    if @company.save
+      ClientCompany.create(company:current_user.company, client:@company)
+      @clients  = current_user.company.get_clients_by_page(1)
+    else
+      render json: @company.errors, status: :unprocessable_entity
     end
   end
 
