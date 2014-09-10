@@ -1,3 +1,4 @@
 $('#clients-table').replaceWith('<%=j render 'companies/table', :clients => @clients %>');
 $('#clients-pagination').replaceWith('<%=j render 'companies/pagination', :current_page => 1 %>');
+<%= render 'layouts/alert', :alert => "You've added #{@company.name} to your clients" %>
 $('#clients-li').tab('show');
