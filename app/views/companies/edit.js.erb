@@ -1,0 +1,6 @@
+$('#company-details div').replaceWith('<%=j render 'companies/edit', :company => @company %>');
+$('#company-details-li').tab('show');
+$("#company-cancel").click( function(event) {
+  event.preventDefault();
+  $('#clients-li').tab('show');
+});
