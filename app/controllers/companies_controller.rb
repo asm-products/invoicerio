@@ -4,12 +4,15 @@ class CompaniesController < ApplicationController
   # GET /companies
   # GET /companies.json
   def index
-    @companies = Company.all
-  end
-
-  # GET /companies/1
-  # GET /companies/1.json
-  def show
+    @page = params[:page].to_i
+    if @page < 1
+      @page = 1
+    elsif @page > current_user.company.get_number_of_client_pages
+      @page = current_user.company.get_number_of_client_pages
+    end
+    respond_to do |format|
+      format.js
+    end
   end
 
   # GET /companies/new
@@ -19,6 +22,7 @@ class CompaniesController < ApplicationController
 
   # GET /companies/1/edit
   def edit
+    @company = Company.find(params[:id])
   end
 
   # POST /companies
@@ -51,10 +55,9 @@ class CompaniesController < ApplicationController
   # DELETE /companies/1
   # DELETE /companies/1.json
   def destroy
-    @company.destroy
-    respond_to do |format|
-      format.html { redirect_to companies_url, notice: 'Company was successfully destroyed.' }
-      format.json { head :no_content }
+    @company = Company.find(params[:id])
+    if @company != nil
+      current_user.company.clients.delete(@company)
     end
   end
 
