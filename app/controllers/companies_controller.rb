@@ -4,12 +4,15 @@ class CompaniesController < ApplicationController
   # GET /companies
   # GET /companies.json
   def index
-    @companies = Company.all
-  end
-
-  # GET /companies/1
-  # GET /companies/1.json
-  def show
+    @page = params[:page].to_i
+    if @page < 1
+      @page = 1
+    elsif @page > current_user.company.get_number_of_client_pages
+      @page = current_user.company.get_number_of_client_pages
+    end
+    respond_to do |format|
+      format.js
+    end
   end
 
   # GET /companies/new
