@@ -1,0 +1,4 @@
+$('#clients-table').replaceWith('<%=j render 'companies/table', :clients => current_user.company.get_clients_by_page(1) %>');
+$('#clients-pagination').replaceWith('<%=j render 'companies/pagination', :current_page => 1 %>');
+<%= render 'layouts/alert', :alert => "You've removed #{@company.name} as your client." %>
+$('#clients-li').tab('show');
