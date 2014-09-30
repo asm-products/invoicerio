@@ -8,12 +8,9 @@
     <div class="btn-group">
       <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown"><%= current_user.company.name %> <b class="caret"></b></button>
       <ul class="dropdown-menu pull-right">
-        <li>
-          <%= link_to 'Account settings', edit_user_registration_path, :remote => true %>
-        </li>
-        <li>
-          <%= link_to 'Sign out', destroy_user_session_path, :method => 'delete' %>
-        </li>
+        <li><%= link_to 'Account settings', edit_user_registration_path, :remote => true %></li>
+        <li><%= link_to 'Company settings', edit_user_company_path, :remote => true %></li>
+        <li><%= link_to 'Sign out', destroy_user_session_path, :method => 'delete' %></li>
       </ul>
     </div>
   </div>
@@ -22,12 +19,12 @@
   <div class="col-md-2 left-panel">
     <h3>
       <ul class="nav-menu-ul">
-        <li class="active">
-          <a href="#invoices" id="invoices-li" data-toggle="tab">Invoices</a>
-        </li>
-        <li>
-          <a href="#clients" id="clients-li" data-toggle="tab">Clients</a>
-        </li>
+        <li class="active"><a href="#invoices" id="invoices-li" data-toggle="tab">Invoices</a></li>
+        <li><a href="#clients" id="clients-li" data-toggle="tab">Clients</a></li>
+        <li><a href="#company-details" data-toggle="tab" id="company-details-li" class="hide"></a></li>
+        <li><a href="#invoice-details" data-toggle="tab" id="invoice-details-li" class="hide"></a></li>
+        <li><a href="#account-settings" data-toggle="tab" id="account-settings-li" class="hide"></a></li>
+        <li><a href="#company-settings" data-toggle="tab" id="company-settings-li" class="hide"></a></li>
       </ul>
     </h3>
   </div>
@@ -37,6 +34,18 @@
     </div>
     <div id="clients" class="tab-pane fade">
       <%= render 'companies/index' %>
+    </div>
+    <div id="company-details" class="tab-pane fade">
+      <div></div>
+    </div>
+    <div id="invoice-details" class="tab-pane fade">
+      <div></div>
+    </div>
+    <div id="account-settings" class="tab-pane fade">
+      <div></div>
+    </div>
+    <div id="company-settings" class="tab-pane fade">
+      <div></div>
     </div>
   </div>
 </div>

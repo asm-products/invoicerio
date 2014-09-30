@@ -14,11 +14,11 @@
     <tbody>
       <% @invoices.each do |invoice| %>
       <tr class="row">
-        <td class="col-md-1 center-aligned"><%= link_to invoice.invoice_number, edit_invoice_path(invoice.id) %></td>
+        <td class="col-md-1 center-aligned"><%= link_to invoice.number, edit_invoice_path(invoice.id) %></td>
         <td class="col-md-4 center-aligned"><%= invoice.issued_to_company.name %></td>
         <td class="col-md-2 center-aligned"><%= invoice.date_of_issue %></td>
         <td class="col-md-1 center-aligned"></td>
-        <td class="col-md-4 right-aligned"><%= invoice.sum %></td>
+        <td class="col-md-4 right-aligned"><%= %></td>
       </tr>
       <% end %>
     </tbody>

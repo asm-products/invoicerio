@@ -25,10 +25,11 @@ class HomeController < ApplicationController
     end
   end
 
-  def edit
+  def edit_company
+    @company = current_user.company
   end
 
-  def update
+  def update_company
   end
 
   private

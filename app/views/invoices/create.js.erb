@@ -1,0 +1,5 @@
+<% if @invoice.id != nil %>
+  window.location.href = '<%= edit_invoice_path(:id => @invoice.id) %>'
+<% else %>
+  <%= render 'layouts/alert', :alert => "Unable to create an invoice." %>
+<% end %>

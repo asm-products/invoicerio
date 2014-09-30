@@ -3,7 +3,13 @@ Rails.application.routes.draw do
     :registrations => 'registrations'
   }
 
-  resources :companies
+  get     '/companies/new'    => 'companies#new',     :as => 'new_company'
+  get     '/companies/:page'  => 'companies#index',   :as => 'companies'
+  post    '/companies'        => 'companies#create',  :as => 'create_company'
+  get     '/company/:id/edit' => 'companies#edit',    :as => 'edit_company'
+  put     '/company/:id'      => 'companies#update',  :as => 'update_company'
+  delete  '/company/:id'      => 'companies#destroy', :as => 'destroy_company'
+
   resources :invoices
 
   root 'home#index'
@@ -11,8 +17,8 @@ Rails.application.routes.draw do
   get  'home/index'    => 'home#index',              as: :home_index
   get  'user/company'  => 'home#new_company',        as: :new_user_company
   post 'user/company'  => 'home#create_company',     as: :create_user_company
-  get  'home/edit'     => 'home#edit',               as: :home_edit
-  get  'home/update'   => 'home#update',             as: :home_update
+  get  'home/edit'     => 'home#edit_company',       as: :edit_user_company
+  get  'home/update'   => 'home#update_company',     as: :update_user_company
 
   get 'static/index' => 'static#index', as: :static_index
 
