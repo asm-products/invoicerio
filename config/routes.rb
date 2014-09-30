@@ -17,8 +17,8 @@ Rails.application.routes.draw do
   get  'home/index'    => 'home#index',              as: :home_index
   get  'user/company'  => 'home#new_company',        as: :new_user_company
   post 'user/company'  => 'home#create_company',     as: :create_user_company
-  get  'home/edit'     => 'home#edit',               as: :home_edit
-  get  'home/update'   => 'home#update',             as: :home_update
+  get  'home/edit'     => 'home#edit_company',       as: :edit_user_company
+  get  'home/update'   => 'home#update_company',     as: :update_user_company
 
   get 'static/index' => 'static#index', as: :static_index
 
