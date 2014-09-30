@@ -1,0 +1,6 @@
+$('#invoice-details div').replaceWith('<%=j render 'invoices/new', :invoice => @invoice %>');
+$('#invoice-details-li').tab('show');
+$("#invoice-cancel").click( function(event) {
+  event.preventDefault();
+  $('#invoices-li').tab('show');
+});

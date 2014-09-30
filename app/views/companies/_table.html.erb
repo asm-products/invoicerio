@@ -2,16 +2,16 @@
   <thead>
     <tr class="row">
       <th class="col-md-4">Client</th>
-      <th class="col-md-4">Address</th>
-      <th class="col-md-4">City</th>
+      <th class="col-md-4 text-center">Address</th>
+      <th class="col-md-4 text-center">City</th>
     </tr>
   </thead>
   <tbody>
     <% clients.each do |p| %>
     <tr class="row">
       <td class="col-md-4"><%= link_to p.name, edit_company_path(p.id), remote: true %></td>
-      <td class="col-md-4 center-aligned"><%= p.address %></td>
-      <td class="col-md-4 center-aligned"><%= p.city %></td>
+      <td class="col-md-4 text-center"><%= p.address %></td>
+      <td class="col-md-4 text-center"><%= p.city %></td>
     </tr>
     <% end %>
   </tbody>
