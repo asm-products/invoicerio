@@ -1,0 +1,39 @@
+<div class="panel">
+  <%= form_for(@invoice, :html => {:class => 'form-horizontal'}, :url => invoices_path, :remote => true) do |f| %>
+    <legend>Information about the new invoice</legend>
+    <%= f.hidden_field :issued_by_company_id, :value => current_user.company.id %>
+    <div class="form-group">
+      <%= f.label :number, 'Reference number:', :class => 'col-md-3 control-label' %>
+      <div class="col-md-9">
+        <%= f.text_field :number, :autofocus => true, :class => 'form-control' %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :issued_to, 'Client:', :class => 'col-md-3 control-label' %>
+      <div class="col-md-9">
+        <%= collection_select(:invoice, :issued_to_company_id, current_user.company.clients, :id, :name, {},
+            html_options = {:class => "form-control"}) %>
+      </div>
+    </div>
+    <div class="form-group">
+      <%= f.label :expiration_date, 'Due date:', :class => 'col-md-3 control-label' %>
+      <div class="col-md-9">
+        <%= f.select :expiration_date,  options_for_select(
+        [
+          ["Due on receipt", Date.today],
+          ["7 days",  Date.today + 1.week],
+          ["14 days", Date.today + 2.week],
+          ["30 days", Date.today + 1.month],
+          ["60 days", Date.today + 2.month]
+        ]), {}, {:class => 'form-control'} %>
+      </div>
+    </div>
+    <%= f.hidden_field :date_of_issue, :value => Date.today %>
+    <div class="form-group">
+      <div class="col-md-offset-3 col-md-9">
+        <%= f.button "Create invoice", :class => 'btn btn-success' %>
+        <%= f.button "Cancel", :id => 'invoice-cancel', :class => 'btn btn-primary' %>
+      </div>
+    </div>
+  <% end %>
+</div>
