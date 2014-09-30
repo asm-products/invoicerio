@@ -1,0 +1,6 @@
+$('#company-settings div').replaceWith('<%=j render 'home/edit_company', :company => @company %>');
+$('#company-settings-li').tab('show');
+$("#company-settings-cancel").click( function(event) {
+  event.preventDefault();
+  $('#invoices-li').tab('show');
+});
