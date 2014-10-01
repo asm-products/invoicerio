@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20140903195142) do
   end
 
   create_table "companies", force: true do |t|
-    t.string   "name"
+    t.string   "name",       null: false
     t.string   "address"
     t.string   "city"
     t.string   "country"
@@ -33,13 +33,13 @@ ActiveRecord::Schema.define(version: 20140903195142) do
   end
 
   create_table "invoices", force: true do |t|
-    t.string   "number"
-    t.integer  "issued_by_company_id"
-    t.integer  "issued_to_company_id"
-    t.date     "date_of_issue"
-    t.string   "currency"
-    t.boolean  "draft"
-    t.date     "expiration_date"
+    t.string   "number",               null: false
+    t.integer  "issued_by_company_id", null: false
+    t.integer  "issued_to_company_id", null: false
+    t.date     "date_of_issue",        null: false
+    t.string   "currency",             null: false
+    t.boolean  "draft",                null: false
+    t.date     "expiration_date",      null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

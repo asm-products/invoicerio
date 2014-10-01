@@ -68,6 +68,6 @@ class InvoicesController < ApplicationController
     end
 
     def create_invoice_params
-      params.require(:invoice).permit(:number, :issued_by_company_id, :issued_to_company_id, :date_of_issue, :expiration_date)
+      params.require(:invoice).permit(:number, :issued_by_company_id, :issued_to_company_id, :date_of_issue, :currency, :draft, :expiration_date)
     end
 end

@@ -2,6 +2,8 @@
   <%= form_for(@invoice, :html => {:class => 'form-horizontal'}, :url => invoices_path, :remote => true) do |f| %>
     <legend>Information about the new invoice</legend>
     <%= f.hidden_field :issued_by_company_id, :value => current_user.company.id %>
+    <%= f.hidden_field :currency, :value => "USD" %>
+    <%= f.hidden_field :draft, :value => true %>
     <div class="form-group">
       <%= f.label :number, 'Reference number:', :class => 'col-md-3 control-label' %>
       <div class="col-md-9">
