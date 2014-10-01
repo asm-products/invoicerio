@@ -1,11 +1,7 @@
 class HomeController < ApplicationController
   def index
-    if current_user.company == nil
-      redirect_to new_user_company_path
-    else
-      @invoices = current_user.company.get_invoices_by_page(1)
-      @clients  = current_user.company.get_clients_by_page(1)
-    end
+    @invoices = current_user.company.get_invoices_by_page(1)
+    @clients  = current_user.company.get_clients_by_page(1)
   end
 
   # used for creating a company, after signing up
@@ -19,7 +15,7 @@ class HomeController < ApplicationController
     @company = Company.new(company_params)
     @company.user = current_user
     if @company.save
-      redirect_to home_index_path
+      redirect_to root_path
     else
       render :new_company
     end
