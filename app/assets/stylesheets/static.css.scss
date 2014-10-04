@@ -207,6 +207,40 @@ $topbar-break: 520px;
 
 
 /**
+ * Reviews
+ */
+.reviews {
+  
+}
+.reviews-title {
+  margin: 40px auto;
+  text-align: center;
+}
+.reviews-review {
+  width: 50%;
+  float: left;
+}
+.reviews-headshot {
+  float: left;
+  margin-right: 20px;
+}
+.reviews-quote {
+  margin: 0;
+  margin-bottom: 10px;
+  font-style: italic;
+  
+  &:before,
+  &:after {
+    content: "\"";
+  }
+}
+.reviews-citation {
+  color: #888;
+  text-align: right;
+}
+
+
+/**
  * Footer
  */
 $footer-break: 700px;
