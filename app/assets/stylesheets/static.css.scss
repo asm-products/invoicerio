@@ -128,7 +128,9 @@ $topbar-break: 520px;
 .hero {
   position: relative;
   height: 580px;
-  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/82016/invoicerio_hero.png') no-repeat center center;
+  width: 100%;
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/82016/invoicerio_hero.png') no-repeat;
+  background-size: 100%;
 }
 .hero-overlay {
   width: 100%;
@@ -167,7 +169,8 @@ $topbar-break: 520px;
  */
 .features {
   background-color: white;
-  padding: 20px auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .features-title {
   text-align: center;
@@ -210,7 +213,7 @@ $topbar-break: 520px;
  * Reviews
  */
 .reviews {
-  
+  padding-bottom: 40px;
 }
 .reviews-title {
   margin: 40px auto;
