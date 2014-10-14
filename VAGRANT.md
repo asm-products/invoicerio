@@ -1,16 +1,4 @@
-# Invoicerio
-
-## A web app for invoices.
-
-This is a product being built by the Assembly community. You can help push this idea forward by visiting [https://assembly.com/invoicerio](https://assembly.com/invoicerio).
-
-### How Assembly Works
-
-Assembly products are like open-source and made with contributions from the community. Assembly handles the boring stuff like hosting, support, financing, legal, etc. Once the product launches we collect the revenue and split the profits amongst the contributors.
-
-Visit [https://assembly.com](https://assembly.com) to learn more.
-
-# Invoicerio virtual development environment
+# Invoicerio virtual development environment using Vagrant
 `invoicerio` comes with a vagrantfile that creates and configures a portable, reproducible and lightweight virtual development environment for [invoicerio](https://github.com/asm-products/invoicerio).
 
 At the moment we use [rwbox](https://github.com/le0pard/rwbox) as basebox (Ubuntu 14.04).
