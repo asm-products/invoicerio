@@ -1,3 +1,369 @@
-// Place all the styles related to the static controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;}body{margin:0;}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block;}audio,canvas,progress,video{display:inline-block;vertical-align:baseline;}audio:not([controls]){display:none;height:0;}[hidden],template{display:none;}a{background-color:transparent;}a:active,a:hover{outline:0;}abbr[title]{border-bottom:1px dotted;}dfn{font-style:italic;}h1{font-size:2em;margin:.67em 0;}mark{background:#ff0;color:#000;}small{font-size:80%;}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline;}sup{top:-.5em;}sub{bottom:-.25em;}img{border:0;}svg:not(:root){overflow:hidden;}figure{margin:1em 40px;}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0;}code,kbd,pre,samp{font-family:monospace, monospace;font-size:1em;}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0;}button{overflow:visible;}button,select{text-transform:none;}button,html input[type=button],/* 1 */
+input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}button[disabled],html input[disabled]{cursor:default;}input{line-height:normal;}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0;}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto;}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box;}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none;}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em;}table{border-collapse:collapse;border-spacing:0;}td,th{padding:0;}b,strong,optgroup{font-weight:700;}pre,textarea{overflow:auto;}button::-moz-focus-inner,input::-moz-focus-inner,legend{border:0;padding:0;}
+
+$primary-color: #15bd9d;
+$secondary-color: #f8f8f8;
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: #DDD;
+}
+
+
+/**
+ * Base Styles
+ */
+.wrapper {
+  width: 900px;
+  max-width: 100%;
+  margin: auto;
+  padding: 0 10px;
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+input,
+button,
+.button {
+  padding: 5px 10px;
+}
+
+button,
+.button {
+  color: white!important;
+  background-color: $secondary-color;
+  border: 1px solid $secondary-color;
+  border-radius: 5px;
+}
+.button-primary {
+  background-color: $primary-color;
+  border: 1px solid $primary-color;
+}
+
+
+
+/**
+ * Header
+ */
+$topbar-break: 520px;
+
+.topbar {
+
+  color: $primary-color;
+  background-color: white;
+
+  a {
+    color: black;
+    text-decoration: none;
+  }
+
+  @media screen and (min-width: $topbar-break) {
+    height: 75px;
+    line-height: 75px;
+  }
+}
+.topbar-title {
+
+}
+.topbar-logo {
+  width: 150px;
+  vertical-align: top;
+}
+.topbar-toggle {
+  display: block;
+  float: right;
+  padding-top: 25px;
+  cursor: pointer;
+  
+  @media screen and (min-width: $topbar-break) {
+    display: none;
+  }
+}
+.topbar-nav {
+  display: none;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    display: block;
+    text-align: center;
+    padding: 10px;
+  }
+  a {
+    display: block;
+  }
+
+  @media screen and (min-width: $topbar-break) {
+    display: block;
+    float: right;
+    li {
+      display: inline;
+      padding: 0 5px;
+    }
+    a {
+      display: inline-block;
+    }
+    a.button {
+      display: inline;
+    }
+  }
+
+}
+.topbar-toggle-hide {
+  display: block;
+}
+
+
+/**
+ * Hero
+ */
+.hero {
+  position: relative;
+  height: 580px;
+  width: 100%;
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/82016/invoicerio_hero.png') no-repeat;
+  background-size: 100%;
+}
+.hero-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(black, 0.5);
+}
+.hero-wrapper {
+  width: 619px;
+  max-width: 100%;
+  margin: auto;
+  padding-top: 100px;
+}
+.hero-text,
+.hero-subtext {
+  color: white;
+  text-align: center;
+}
+.hero-text {
+  font-size: 50px;
+}
+.hero-cta {
+  display: block;
+  width: 179px;
+  height: 45px;
+  margin: 33px auto;
+  padding-top: 12px;
+  text-align: center;
+  text-decoration: none;
+  background-color: $primary-color;
+  border: 1px solid $primary-color;
+}
+
+
+/**
+ * Features
+ */
+.features {
+  background-color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.features-title {
+  text-align: center;
+  margin: 10px auto;
+}
+.features-item {
+  width: 32%;
+  float: left;
+  margin: 10px 0 20px 0;
+  padding: 10px;
+
+  &:nth-of-type(3) {
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  }
+}
+.features-item-title,
+.features-item-description {
+  text-align: center;
+  margin-top: 5px;
+  margin-botton: 5px;
+}
+.features-item-icon {
+  display: block;
+  margin: auto;
+  height: 45px;
+  width: auto;
+}
+.features-item-title {
+  font-size: .9em;
+}
+.features-item-description {
+  color: #7c7c7c;
+  font-size: .8em;
+}
+
+
+/**
+ * Reviews
+ */
+.reviews {
+  padding-bottom: 40px;
+}
+.reviews-title {
+  margin: 40px auto;
+  text-align: center;
+}
+.reviews-review {
+  width: 50%;
+  float: left;
+}
+.reviews-headshot {
+  float: left;
+  margin-right: 20px;
+}
+.reviews-quote {
+  margin: 0;
+  margin-bottom: 10px;
+  font-style: italic;
+  border-left: 0;
+  
+  &:before,
+  &:after {
+    content: "\"";
+  }
+}
+.reviews-citation {
+  color: #888;
+  text-align: right;
+}
+
+
+/**
+ * Footer
+ */
+$footer-break: 700px;
+
+.footer {
+  padding: 20px 0;
+  background-color: $secondary-color;
+}
+
+.footer-subscribe,
+.footer-recent {
+  margin: 10px auto;
+}
+.footer-subscribe {
+  float: left;
+  width: 50%;
+  padding-right: 20px;
+  border-right: 1px solid #ccc;
+}
+.footer-subscribe-text {
+  margin: 5px auto;
+}
+.footer-subscribe-form {
+
+  input,
+  button {
+    float: left;
+    margin: 10px auto;
+  }
+
+  input {
+    width: 66.66%;
+  }
+  button {
+    width: 33.33%;
+  }
+
+}
+.footer-recent {
+  float: left;
+  width: 50%;
+  padding-left: 20px;
+}
+.footer-recent-blogs {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    margin: 5px auto;
+  }
+}
+
+
+.footer-divider {
+  width: 900px;
+  display: block; 
+  height: 1px;
+  border: 0; 
+  border-top: 1px solid #ccc;
+  margin: 20px auto; 
+  padding: 0;
+}
+
+.footer-info {
+  float: left;
+  text-align: left;
+}
+.footer-copyright,
+.footer-nav {
+  color: #777;
+  font-size: .8em;
+}
+.footer-copyright {
+  margin: 0;
+}
+.footer-nav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    display: inline;
+    padding: 0;
+
+    &:not(:last-of-type):after {
+      content: " | ";
+    }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+  }
+}
+.footer-social {
+  text-align: right;
+  margin: 20px auto;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    display: inline;
+    float: right;
+  }
+}
+
+.footer-social-icon {
+  width: 35px;
+  height: auto;
+  opacity: .5;
+  padding: 5px;
+}  
