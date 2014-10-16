@@ -12,15 +12,23 @@ Rails.application.routes.draw do
 
   resources :invoices
 
-  root 'home#index'
+  authenticated :user do
+    devise_scope :user do
+      root to: 'home#index'
+    end
+  end
+
+  unauthenticated do
+    devise_scope :user do
+      root to: 'static#index', :as => 'static_index'
+    end
+  end
 
   get  'home/index'    => 'home#index',              as: :home_index
   get  'user/company'  => 'home#new_company',        as: :new_user_company
   post 'user/company'  => 'home#create_company',     as: :create_user_company
   get  'home/edit'     => 'home#edit_company',       as: :edit_user_company
   get  'home/update'   => 'home#update_company',     as: :update_user_company
-
-  get 'static/index' => 'static#index', as: :static_index
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
