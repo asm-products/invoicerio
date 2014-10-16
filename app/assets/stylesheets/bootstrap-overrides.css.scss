@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import url("//fonts.googleapis.com/css?family=Lato:400,700,900,400italic|Pacifico");
+@import "bootstrap-variables";
+@import "bootstrap";
+
 .dropdown-menu { margin-top: 0px; }
 
 .alert { height: 43px; }

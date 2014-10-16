@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "bootstrap-variables";
+
 a:hover { text-decoration: none; }
 
 .logo-row {
@@ -29,10 +31,9 @@ a:hover { text-decoration: none; }
 }
 
 .left-panel {
-  a { color: #808a8f; }
-  a:visited { color: #808a8f; }
-  a:hover { color: #000000; }
-  li.active a { color: #18bc9c; }
+  a { color: $gray; }
+  a:hover { color: $gray-darker; }
+  li.active a { color: $brand-success; }
 }
 
 .right-panel {

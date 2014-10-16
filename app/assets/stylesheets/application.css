@@ -10,13 +10,11 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require bootstrap
  *= require_tree .
  */
 
 html { height: 100%; }
 
 body {
-  background-color:#ecf0f1;
   height: 100%;
 }
